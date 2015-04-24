@@ -1,0 +1,458 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"b",
+				"block"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"ib",
+				"inline-block"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"back",
+				"background-position"
+			],
+			[
+				"cl",
+				"class	Attr"
+			],
+			[
+				"rep",
+				"repeat-x"
+			],
+			[
+				"bac",
+				"background-repeat"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"tex",
+				"text-align"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "_css-generator/Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 1078,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 368.0,
+		"last_filter": "set html",
+		"selected_items":
+		[
+			[
+				"set html",
+				"Set Syntax: HTML"
+			],
+			[
+				"ident",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			]
+		],
+		"width": 561.0
+	},
+	"console":
+	{
+		"height": 103.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+	],
+	"file_history":
+	[
+		"/Users/karlis/mein3d/package.json",
+		"/Users/karlis/Desktop/yum/_css-generator/package.json",
+		"/Users/karlis/Desktop/_css-gen/package.json",
+		"/Users/karlis/Documents/Lay your brick",
+		"/Users/karlis/mein3d/scss/_colors.scss",
+		"/Users/karlis/mein3d/src/pages/order.twig",
+		"/Users/karlis/mein3d/src/partials/form/radio-block/radio-block.twig",
+		"/Users/karlis/mein3d/src/partials/co-total/co-total.twig",
+		"/Users/karlis/mein3d/src/partials/button/_button.scss",
+		"/Users/karlis/mein3d/src/partials/form/select/_select.scss",
+		"/Users/karlis/mein3d/src/partials/co-footer/_co-footer.scss",
+		"/Users/karlis/mein3d/src/partials/co-table/_co-table.scss",
+		"/Users/karlis/mein3d/src/partials/co-total/_co-total.scss",
+		"/Users/karlis/mein3d/src/pages/address.twig",
+		"/Users/karlis/mein3d/scss/_typography.scss",
+		"/Users/karlis/mein3d/scss/_grid-settings.scss",
+		"/Users/karlis/mein3d/src/pages/_checkout.scss",
+		"/Users/karlis/mein3d/src/pages/cart.twig",
+		"/Users/karlis/mein3d/scss/style.scss",
+		"/Users/karlis/mein3d/src/partials/accordion/accordion.twig",
+		"/Users/karlis/mein3d/src/partials/form/input/_input.scss",
+		"/Users/karlis/mein3d/src/partials/form/select/select.twig",
+		"/Users/karlis/mein3d/src/partials/form/input/input.twig",
+		"/Users/karlis/mein3d/src/partials/form/radio/_radio.scss",
+		"/Users/karlis/mein3d/src/layouts/checkout.twig",
+		"/Users/karlis/mein3d/src/partials/co-tabs/co-tabs.twig",
+		"/Users/karlis/mein3d/src/partials/co-table/co-table.twig",
+		"/Users/karlis/mein3d/src/pages/payment.twig",
+		"/Users/karlis/mein3d/src/partials/co-footer/co-footer.twig",
+		"/Users/karlis/mein3d/src/partials/co-info/_co-info.scss",
+		"/Users/karlis/mein3d/src/partials/co-info/co-info.twig",
+		"/Users/karlis/mein3d/node_modules/grunt-twig-render/node_modules/twig/test-ext/checkout.sh",
+		"/Users/karlis/mein3d/src/pages/checkout.twig",
+		"/Users/karlis/mein3d/scss/_mixins.scss",
+		"/Users/karlis/mein3d/src/partials/co-tabs/_co-tabs.scss",
+		"/Users/karlis/mein3d/src/partials/as-seen/_as-seen.scss",
+		"/Users/karlis/Documents/responsive-table.scss",
+		"/Users/karlis/mein3d/node_modules/grunt-autoprefixer/node_modules/autoprefixer-core/node_modules/caniuse-db/features-json/svg-css.json",
+		"/Users/karlis/mein3d/src/pages/configurator.twig",
+		"/Users/karlis/mein3d/_build/config/connect.js",
+		"/Users/karlis/mein3d/src/pages/index.twig",
+		"/untitled",
+		"/http:::ieeexplore.ieee.org.resursi.rtu.lv:xpl:arti",
+		"/a",
+		"/Users/karlis/Dropbox/TOOLS/FileZillaPortable/Data/settings/sitemanager.xml",
+		"/Users/karlis/Downloads/new  1.html",
+		"/Users/karlis/Desktop/programmaturas-testesana - runa",
+		"/Users/karlis/Library/Application Support/Sublime Text 3/Packages/User/stylevariables.sublime-settings",
+		"/Users/karlis/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/karlis/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/karlis/Library/Application Support/Sublime Text 3/Packages/User/PlainTasks.sublime-settings"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 154.0,
+		"where_history":
+		[
+			"/Users/karlis/mein3d/src"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"input/input",
+			"input",
+			"input\">",
+			"bel\">",
+			"table",
+			"total",
+			"cards",
+			"label",
+			"input",
+			"checkbox",
+			"include",
+			"{{name}}",
+			"select",
+			"{id}}",
+			"{{id}}",
+			"randomid2",
+			"partials",
+			"select",
+			"co-total",
+			"form",
+			"for",
+			"ype=\"number\"",
+			"number",
+			"put type=\"number",
+			"active",
+			"e=\"2\"",
+			"\"number\" ",
+			"\"Anz.\">2",
+			">2",
+			"info",
+			"dl",
+			"span",
+			"co-table",
+			"footer",
+			"co-table__price",
+			"button",
+			".button",
+			"tabs",
+			"footer",
+			"&:before{",
+			"600",
+			"font-weight",
+			"1",
+			"href=\"",
+			"<a",
+			"$color__primary",
+			"<img",
+			"checout-3d.png",
+			"3D Figure",
+			"co-table__size",
+			">2<",
+			"header",
+			"table",
+			"placehold.it/149x103/",
+			"slider",
+			"Star Wars",
+			"Gross",
+			"Year",
+			"Genre",
+			"Movie Title",
+			"configurator",
+			"src",
+			"<p>",
+			"p",
+			"lang=\"ru-RU\"",
+			"lang=\"lv-LV\"",
+			"class=\"western\"",
+			"align=\"[a-z]*\"",
+			"style=\"[a-z\\-:\\s\\,;\"#\\d]*",
+			"style=\"",
+			"style",
+			"<!DOCTYPE html>\n<html>\n\n<head>\n	<link type=\"text/css\" rel=\"stylesheet\" href=\"stylesheet.css\" />\n	<title>Result</title>\n</head>\n<h1> <a href=\"url\"> Ogres ekspresis </a> </h1>\n<div id=\"header-area\">\n	<div class=\"divider\"></div>\n	<div id=\"header-area-inside\">\n		<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><strong style=\"color: #333333;\"><span style=\"font-family: verdana, geneva; font-size: small;\"><span lang=\"lv-LV\">PAKALPOJUMS\n			GALVENOKĀRT IR DOMĀTS „LATVIJAS NODARBINĀTĪBAS VEICINĀŠANAS BIEDRĪBAS” \n			BIEDRU PĀRVADĀŠANAI UN TIEM, KAS ATBALSTA ŠĪS BIEDRĪBAS DARBĪBU.</span></span></strong></p>\n			<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><span style=\"color: #333333;\"><strong><span style=\"font-family: verdana, geneva; font-size: small;\">NOTEIKUMI PAREDZ UZŅEMT TEVI ŠAJĀ GRUPĀ, JA TRANSPORTLĪDZEKLĪ IR BRĪVAS VIETAS.</span></strong>\n			</span>\n		</p>\n		<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><span style=\"color: #333333;\"><strong><span style=\"font-family: verdana, geneva; font-size: small;\">APMAKSA PAR BRAUCIENU, KURU TU VEIC, DOS IESPĒJU DARBA MEKLĒTĀJIEM ATRAST DARBU.</span></strong>\n		</span>\n	</p>\n	<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><strong style=\"color: #333333;\"><span style=\"font-family: verdana, geneva; font-size: small;\">PALDIES.</span></strong></p>\n	<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><em><strong style=\"color: #333333;\"><span style=\"font-family: verdana, geneva; font-size: small;\">JA\n		TU VĒLIES PALĪDZĒT CITIEM UN PATS SAŅEMT PAPILDUS IESPĒJAS, AIZPILDI \n		IESNIEGUMU UN ATSTĀJ TO PIE TRANSPORTLĪDZEKĻA VADĪTĀJA. IESNIEGUMS TIKS \n		NODOTS BIEDRĪBAI.</span></strong></em></p>\n		<hr>\n		<p class=\"western\" align=\"justify\" lang=\"ru-RU\"><strong style=\"color: #333333;\"><span style=\"font-family: verdana, geneva; font-size: small;\"><span lang=\"ru-RU\">УСЛУГА В ПЕРВУЮ ОЧЕРЕДЬ ПРЕДНАЗНАЧЕН ДЛЯ ПЕРЕВОЗКИ ЧЛЕНОВ ЛАТВИЙСКОГО ОБЩЕСТВА ПОДДЕРЖКИ ЗАНЯТОСТИ (</span><span lang=\"lv-LV\">Latvijas Nodarbinātības veicināšanas biedrība) И ТЕХ, КТО ПОДДЕРЖИВАЕТ ДЕЯТЕЛЬНОСТЬ ДАННОГО ОБЩЕСТВА.</span></span></strong></p>\n		<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><span style=\"color: #333333;\"><strong><span style=\"font-family: verdana, geneva; font-size: small;\">УСЛОВИЯ ПОЗВОЛЯЮТ ПРИНЯТЬ ТЕБЯ В НАШУ ГРУППУ, ЕСЛИ В ТРАНСПОРТЕ ЕСТЬ СВОБОДНЫЕ МЕСТА. </span></strong>\n		</span>\n	</p>\n	<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><span style=\"color: #333333;\"><strong><span style=\"font-family: verdana, geneva; font-size: small;\">ПОЕЗДКА, ОПЛАЧЕННАЯ ТОБОЮ, ПОМОЖЕТ ДАТЬ ШАНС НУЖДАЮЩИМСЯ НАЙТИ РАБОТУ.</span></strong>\n	</span>\n</p>\n<p class=\"western\" align=\"justify\" lang=\"lv-LV\"><strong style=\"color: #333333;\"><span style=\"font-family: verdana, geneva; font-size: small;\">СПАСИБО.</span></strong></p>\n<p class=\"western\" align=\"justify\"><em><span style=\"color: #333333;\"><strong><span style=\"font-family: verdana, geneva; font-size: small;\"><span lang=\"lv-LV\">ЕСЛИ\n	ТЫ ХОЧЕШЬ ПОМОЧЬ ДРУГИМ И САМОМУ ПОЛУЧИТЬ ДОПОЛНИТЕЛЬНЫЕ ВОЗМОЖНОСТИ, \n	ЗАПОЛНИ ЗАЯВЛЕНИЕ И ОСТАВЬ ЕГО У ВОДИТЕЛЯ ТРАНПОРТА. З</span><span lang=\"ru-RU\">АЯВЛЕНИЕ БУДЕТ ПЕРЕДАНО В ОБЩЕСТВО. </span></span></strong></span></em></p>\n	<p class=\"western\" align=\"justify\" lang=\"lv-LV\">&nbsp;</p>\n</div>\n<div class=\"divider\"></div>\n</div>\n</div>\n<div id=\"central\">\n	<div id=\"sidebar\">\n	</div>\n	<div id=\"body\">\n	</div>\n	<div class=\"spacer\">&nbsp;</div>\n</div>\n</body>\n\n</html>\n",
+			"notest",
+			"v",
+			"vienm",
+			" ",
+			"paveidos",
+			"Veiktsp"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "_css-generator/Gruntfile.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1078,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								213
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/predawn.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 51.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "yum.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"colors",
+				"scss/_colors.scss"
+			],
+			[
+				"scss",
+				"scss/style.scss"
+			],
+			[
+				"colo",
+				"scss/_colors.scss"
+			],
+			[
+				"color",
+				"scss/_colors.scss"
+			],
+			[
+				"s",
+				"scss/style.scss"
+			],
+			[
+				"chekoscss",
+				"src/pages/_checkout.scss"
+			],
+			[
+				"checkout",
+				"src/pages/checkout.twig"
+			],
+			[
+				"checko",
+				"node_modules/grunt-twig-render/node_modules/twig/test-ext/checkout.sh"
+			],
+			[
+				"chec",
+				"src/layouts/checkout.twig"
+			],
+			[
+				"co-ta",
+				"src/partials/co-table/_co-table.scss"
+			],
+			[
+				"co-tab",
+				"src/partials/co-table/co-table.twig"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 224.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

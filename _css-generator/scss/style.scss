@@ -1,0 +1,24 @@
+/* 
+	Project: YUM
+	CSS Author: karlis.upitis
+*/
+
+// @import "bourbon";
+// @import "grid-settings";
+// @import "neat";
+@import "colors";
+@import "typography";
+
+// Vendor
+@import "vendor/bootstrap.min";
+@import "vendor/bootstrap-theme.min";
+
+// Elements
+// @import "../src/partials/steps/steps";
+
+//Pages
+// @import "../src/pages/configurator";
+
+// .page{
+// 	@include outer-container(95%);
+// }

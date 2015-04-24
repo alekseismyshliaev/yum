@@ -1,0 +1,33 @@
+$xs: new-breakpoint(min-width em(280) 4);
+$s: new-breakpoint(min-width em(481) 6);
+$m: new-breakpoint(min-width em(641) 8);
+$l: new-breakpoint(min-width em(733) 12);
+
+/*
+
+// ---------------------- xs mediaq
+@include media($xs) {
+}
+// ---------------------- s mediaq
+@include media($s) {
+}
+// ---------------------- m mediaq
+@include media($m) {
+}
+// ---------------------- l mediaq
+@include media($l) {
+}
+
+*/
+
+$column: 90px;
+$gutter: 8px;
+// $grid-columns: 12;
+$max-width: em(960);
+
+
+$visual-grid: false;
+// $visual-grid: false;
+$visual-grid-color: firebrick;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.1;
