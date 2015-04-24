@@ -20,7 +20,7 @@ function makeAuthRequest() {
 }
 
 $(document).ready(function() {
-    makeAuthRequest();
+    //makeAuthRequest();
 });
 
 
