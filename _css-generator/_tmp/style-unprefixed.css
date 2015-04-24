@@ -7206,11 +7206,11 @@ button.close {
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1); }
 
 /*# sourceMappingURL=bootstrap-theme.css.map */
-/* line 2, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 15, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs > li {
   margin-bottom: 12px; }
 
-/* line 6, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 19, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs > li > a {
   display: block;
   position: relative;
@@ -7219,21 +7219,21 @@ button.close {
   padding: 8px;
   border-radius: 3px; }
 
-/* line 14, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 27, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs > li > a:hover {
   background-color: #000;
   transition: all 500ms ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   text-decoration: none; }
 
-/* line 20, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 33, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs h2 {
   bottom: 0;
   font-size: 14px;
   height: 33px;
   margin: 8px 0 0; }
 
-/* line 26, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 39, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs .glyphicon-play-circle {
   font-size: 60px;
   opacity: 0.6;
@@ -7242,14 +7242,14 @@ button.close {
   top: 31%;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
 
-/* line 34, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 47, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs > li > a:hover .glyphicon-play-circle {
   color: #fff;
   opacity: 1;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
   transition: all 500ms ease; }
 
-/* line 40, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 53, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs .duration {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 2px;
@@ -7262,18 +7262,18 @@ button.close {
   position: absolute;
   top: 12px; }
 
-/* line 52, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+/* line 65, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
 .video-list-thumbs > li > a:hover .duration {
   background-color: #000;
   transition: all 500ms ease; }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  /* line 57, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+  /* line 70, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
   .video-list-thumbs .glyphicon-play-circle {
     font-size: 35px;
     right: 36%;
     top: 27%; }
-  /* line 62, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
+  /* line 75, /Users/karlis/Desktop/yum/_css-generator/scss/_video-list.scss */
   .video-list-thumbs h2 {
     bottom: 0;
     font-size: 12px;
