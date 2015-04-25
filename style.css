@@ -7471,3 +7471,28 @@ button.close {
     height: 100%;
     line-height: 60px;
     margin-left: 8px; }
+
+/* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+.filters {
+  height: 65px;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  /* line 5, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+  .filters__bar {
+    height: 65px;
+    background-image: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+    background-repeat: repeat-x;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 5px rgba(0, 0, 0, 0.075);
+    background-color: #f8f8f8;
+    border-color: #e7e7e7; }
+    /* line 17, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+    .filters__bar.affix {
+      top: 0;
+      width: 100%; }
+  /* line 22, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+  .filters .container {
+    height: 100%; }
+  /* line 26, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+  .filters__search {
+    margin-top: 15px; }

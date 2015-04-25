@@ -67,5 +67,17 @@ function handleValidationResponse(data) {
 //         makeAuthRequest();
 //     }
 // });
+// 
+
+$('.filters__bar').affix({
+      offset: {
+        top: $('.filters').offset().top
+      }
+}); 
+$(document).ready(function(){
+    console.log( $('.navbar').outerHeight(true) ,$ ('.upload-container').outerHeight(true))
+    
+})
+
 
 
