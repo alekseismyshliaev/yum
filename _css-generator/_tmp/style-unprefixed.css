@@ -2,6 +2,30 @@
 	Project: YUM
 	CSS Author: karlis.upitis
 */
+/* line 4, node_modules/node-neat/node_modules/bourbon-neat/app/assets/stylesheets/grid/_box-sizing.scss */
+html {
+  box-sizing: border-box; }
+
+/* line 11, node_modules/node-neat/node_modules/bourbon-neat/app/assets/stylesheets/grid/_box-sizing.scss */
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+/*
+
+// ---------------------- xs mediaq
+@include media($xs) {
+}
+// ---------------------- s mediaq
+@include media($s) {
+}
+// ---------------------- m mediaq
+@include media($m) {
+}
+// ---------------------- l mediaq
+@include media($l) {
+}
+
+*/
 /*!
  * Bootstrap v3.3.4 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -7706,21 +7730,28 @@ button.close {
     width: 40px;
     height: 40px;
     margin-top: 11px;
-    border-radius: 50%; }
-    /* line 14, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
+    border-radius: 50%;
+    overflow: hidden; }
+    /* line 15, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
     .profile__image img {
       max-width: 100%; }
-  /* line 18, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
+  /* line 19, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
   .profile__name {
     height: 100%;
     line-height: 60px;
     margin-left: 8px; }
-  /* line 23, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
+  /* line 24, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
   .profile__logout {
+    position: relative;
     text-decoration: none;
     height: 100%;
     line-height: 60px;
-    margin-left: 8px; }
+    margin-left: 16px; }
+    /* line 31, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
+    .profile__logout:before {
+      content: "|";
+      position: absolute;
+      left: -10px; }
 
 /* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
 .filters {
@@ -7748,18 +7779,33 @@ button.close {
     margin-top: 15px; }
 
 /* line 2, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+.navbar-header {
+  display: inline-block; }
+/* line 5, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
 .navbar-brand {
   position: relative;
   box-sizing: border-box;
   height: 62px;
   padding: .5em 0 .5em 15px; }
-  /* line 7, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+  /* line 10, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
   .navbar-brand:after {
     content: "YUM";
     font-size: 34px;
     position: absolute;
-    right: -58px;
+    right: 0px;
     top: 22px; }
-  /* line 14, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+  /* line 18, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
   .navbar-brand img {
     max-height: 100%; }
+  @media screen and (min-width: 17.5em)  {
+    .navbar-brand {
+      width: 80px; }
+      /* line 24, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+      .navbar-brand:after {
+        display: none; } }
+  @media screen and (min-width: 30.0625em)  {
+    .navbar-brand {
+      width: 160px; }
+      /* line 30, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+      .navbar-brand:after {
+        display: block; } }

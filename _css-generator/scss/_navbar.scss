@@ -1,4 +1,7 @@
 .navbar{
+	&-header{
+		display: inline-block;
+	}
 	&-brand{
 		position: relative;
 		box-sizing: border-box;
@@ -8,11 +11,25 @@
 			content: "YUM";
 			font-size: 34px;
 			position: absolute;
-			right: -58px;
+			right: 0px;
 			top: 22px;
+
 		}
 		img{
 			max-height: 100%;
+		}
+
+		@include media($xs){
+			width: 80px;
+			&:after{
+				display: none;
+			}
+		}
+		@include media($s){
+			width: 160px;
+			&:after{
+				display: block;
+			}
 		}
 	}
 }

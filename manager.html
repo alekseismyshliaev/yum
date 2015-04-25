@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- TODO - add description/authors  -->
+	<!-- <meta name="description" content="">
+	<meta name="author" content=""> -->
+	<!-- TODO - add favicon -->
+	<!-- <link rel="icon" href="../../favicon.ico"> -->
+
+	<title>YUM | Youtube unlisted-video Manager</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="style.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- LOGO -->
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">
+					<img src="images/logo.png" alt="YUM logo">
+				</a>
+			</div>
+			
+			<!-- Profile -->
+			<div class="navbar__profile profile">
+				<div class="profile__image">
+					<img src="images/photo.jpg" alt="proile image">
+				</div>
+				<div class="profile__name">
+					John Doe
+				</div>
+				<a href="#" class="profile__logout">logout</a>
+			</div>
+
+		</div>
+	</nav>
+
+	<!-- BLOCK 1 - file upload -->
+	<div class="container upload-container">
+		<div class="upload"> 
+			<form action="/upload" method="post" enctype="multipart/form-data" class="dropzone" drop-zone="" id="file-dropzone">
+				
+			</form>
+		</div>
+	</div>
+
+		<!-- BLOCK 2 - video filters -->
+	<div class="filters">
+		<div class="filters__bar">
+			<div class="container">
+
+				<div class="col-lg-6 col-xs-5 filters__search" >
+					<div class="input-group">
+						<input type="text" placeholder="Search for..." class="form-control">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-default">
+								<span aria-hidden="true" class="glyphicon glyphicon-search"></span>
+							</button>
+						</span>
+					</div><!-- /input-group -->
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+		<!-- BLOCK 3 - video list -->
+	<div class="container">
+		<div class="video">
+			<ul class="video__list list-unstyled video-list-thumbs row">
+			</ul><!-- eof video__list -->
+		</div><!-- eof video -->
+	</div>
+
+	</div>
+
+<!-- 	<footer class="footer">
+		<div class="container">
+			<p class="text-muted">Copyrights</p>
+		</div>
+	</footer>
+ -->
+
+<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="js/vendor/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vendor/dropzone.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+    <script src="js/vendor/client.js?onload=handleClientLoad"></script>
+
+</body>
+</html>
