@@ -4,7 +4,7 @@ var REDIRECT_URI = "http://smishlayev.github.io/yum/index.html";
 var SCOPE = [
     "https://www.googleapis.com/auth/youtube.upload",
 ];
-var VALIDATION_SERVER = "https://googleapis.com/oauth2/v1/tokeninfo";
+var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
 function constructAuthURI() {
     var parameters = {
@@ -38,7 +38,7 @@ function handleAuthResponse(data) {
 
 function makeValidationRequest(token) {
     $.getJSON(VALIDATION_SERVER + "?" + $.param({access_token: token}),
-         handleValidationResponse);
+        handleValidationResponse);
 }
 
 function handleValidationResponse(data) {
@@ -58,7 +58,7 @@ function handleValidationResponse(data) {
 
 $(document).ready(function() {
     var data = deparam(window.location.hash.substring(1));
-    if("access_token" in data) { // set cookie and check it
+    if("access_token" in data) { //TODO set cookie and check it
         makeValidationRequest(data["access_token"]);
     } else {
         makeAuthRequest();
