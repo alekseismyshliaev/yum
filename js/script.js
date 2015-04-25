@@ -57,15 +57,15 @@ function handleValidationResponse(data) {
 
 
 
-$(document).ready(function() {
-    var data = deparam(window.location.hash.substring(1));
-    if(typeof $.cookie("user_id") != "undefined") {
-        alert("logged in " + $.cookie("user_id"));
-    } else if("access_token" in data) {
-        makeValidationRequest(data["access_token"]);
-    } else {
-        makeAuthRequest();
-    }
-});
+// $(document).ready(function() {
+//     var data = deparam(window.location.hash.substring(1));
+//     if(typeof $.cookie("user_id") != "undefined") {
+//         alert("logged in " + $.cookie("user_id"));
+//     } else if("access_token" in data) {
+//         makeValidationRequest(data["access_token"]);
+//     } else {
+//         makeAuthRequest();
+//     }
+// });
 
 
