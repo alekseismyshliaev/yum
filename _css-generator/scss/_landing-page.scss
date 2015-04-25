@@ -24,7 +24,7 @@ html{
 			right:0;
 			bottom:0;
 			background-color: black;
-			opacity: .8;
+			opacity: .9;
 		}
 		// &__container{
 		// 	position: relative;
@@ -64,9 +64,9 @@ html{
 			width: 95%;
 			padding: 1em;
 			.hero__sign-in{
-				width: 240px;
+				width: 220px;
 				&:hover{
-					width: 280px;
+					width: 250px;
 				}
 			}
 		}
@@ -89,9 +89,15 @@ html{
 				max-width: 100%;
 			}
 		}
+		&__title{
+			color: white;
+			font-size: 28px;
+			opacity: 0.7;
+			font-weight: bold;
+		}
 		&__description{
 			color: white;
-			font-size: 23px;
+			font-size: 20px;
 			margin-top: 24px;
 			opacity: 0.7;
 		}
