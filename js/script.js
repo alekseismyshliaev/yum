@@ -42,13 +42,9 @@ function setUserInfo() {
     gapi.client.load("plus", "v1", function() {
         var request = gapi.client.plus.people.get({"userId": "me"});
         request.execute(function(response) {
-            var header = $("header");
-            header.append($("p").text(response.displayName));
-            var img = $("<img/>", {
-                src: response.image.url,
-                width: "50px",
-            });
-            header.append(img);
+
+            $("div.profile div.profile__name").text(response.displayName);
+            $("div.profile div.profile__image img").attr("src", response.image.url);
         });
     });
 }
