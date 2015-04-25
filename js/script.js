@@ -2,6 +2,7 @@ var SERVER_ADDRESS = "https://accounts.google.com/o/oauth2/auth";
 var CLIENT_ID = "872533094067-3mae4rlvuahk2pb146ju3ncgrtbh4c2s.apps.googleusercontent.com";
 var REDIRECT_URI = "http://smishlayev.github.io/yum/index.html";
 var SCOPE = [
+    "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/userinfo.profile",
 ];
