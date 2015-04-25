@@ -34,7 +34,7 @@ function handleAuthResult(authResult) {
         setUserInfo();
         requestUploadListId();
     } else {
-        // $("button").click(requestAuth);
+        $("div.profile .profile_login").click(requestAuth);
         $("div.video").html("Please log in first");
     }
 }
