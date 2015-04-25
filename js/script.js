@@ -246,4 +246,7 @@ $(function() {
             });
         },
     });
+    $("a.profile__logout").click(function() {
+        gapi.auth.signOut();
+    });
 })
