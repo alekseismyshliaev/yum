@@ -53,6 +53,7 @@ function handleValidationResponse(data) {
         // TODO have errors
     }
     $.cookie("user_id", data["user_id"], {expires: data["expires"]});
+    window.location.hash = "";
 }
 
 
