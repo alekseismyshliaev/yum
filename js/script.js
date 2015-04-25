@@ -1,6 +1,7 @@
 var SERVER_ADDRESS = "https://accounts.google.com/o/oauth2/auth";
 var CLIENT_ID = "872533094067-3mae4rlvuahk2pb146ju3ncgrtbh4c2s.apps.googleusercontent.com";
 var REDIRECT_URI = "http://smishlayev.github.io/yum/manager.html";
+var LOGIN_URI = "http://smishlayev.github.io/yum/index.html";
 var SCOPE = [
     "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.upload",
@@ -20,20 +21,12 @@ function checkAuth() {
     }, handleAuthResult);
 }
 
-function requestAuth() {
-    gapi.auth.authorize({
-        client_id: CLIENT_ID,
-        scope: SCOPE,
-        immediate: false
-    }, handleAuthResult);
-}
-
 function handleAuthResult(authResult) {
     if(authResult && !authResult.error) {
         setUserInfo();
         requestUploadListId();
     } else {
-        $("div.profile .profile_login").click(requestAuth);
+        window.location.replace(LOGIN_URI);
         // $("div.video").html("Please log in first");
     }
 }
