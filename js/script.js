@@ -35,7 +35,7 @@ function handleAuthResult(authResult) {
         requestUploadListId();
     } else {
         $("div.profile .profile_login").click(requestAuth);
-        $("div.video").html("Please log in first");
+        // $("div.video").html("Please log in first");
     }
 }
 
@@ -84,17 +84,6 @@ function addVideo(item) {
     console.log(item);
 }
 
-// $(document).ready(function() {
-//     var data = deparam(window.location.hash.substring(1));
-//     if(typeof $.cookie("user_id") != "undefined") {
-//         alert("logged in " + $.cookie("user_id"));
-//     } else if("access_token" in data) {
-//         makeValidationRequest(data["access_token"]);
-//     } else {
-//         makeAuthRequest();
-//     }
-// });
-// 
 
 $( window ).resize(function() {
     $('.filters__bar').affix({
@@ -104,10 +93,6 @@ $( window ).resize(function() {
     }); 
 });
 
-$(document).ready(function(){
-    console.log( $('.navbar').outerHeight(true) ,$ ('.upload-container').outerHeight(true))
-    
-})
 
 
 

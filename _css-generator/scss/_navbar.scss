@@ -1,0 +1,18 @@
+.navbar{
+	&-brand{
+		position: relative;
+		box-sizing: border-box;
+		height: 62px;
+		padding: .5em 0 .5em 15px;
+		&:after{
+			content: "YUM";
+			font-size: 34px;
+			position: absolute;
+			right: -58px;
+			top: 22px;
+		}
+		img{
+			max-height: 100%;
+		}
+	}
+}

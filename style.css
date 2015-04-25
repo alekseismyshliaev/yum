@@ -253,8 +253,8 @@ td, th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(../fonts/glyphicons-halflings-regular.eot);
-  src: url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(../fonts/glyphicons-halflings-regular.woff) format('woff'), url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg'); }
+  src: url(fonts/glyphicons-halflings-regular.eot);
+  src: url(fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'), url(fonts/glyphicons-halflings-regular.woff2) format('woff2'), url(fonts/glyphicons-halflings-regular.woff) format('woff'), url(fonts/glyphicons-halflings-regular.ttf) format('truetype'), url(fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg'); }
 
 /* line 5, /Users/karlis/Desktop/yum/_css-generator/scss/vendor/_bootstrap.min.scss */
 .glyphicon {
@@ -7458,14 +7458,13 @@ button.close {
     border-radius: 50%; }
     /* line 14, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
     .profile__image img {
-      background-color: steelblue;
       max-width: 100%; }
-  /* line 19, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
+  /* line 18, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
   .profile__name {
     height: 100%;
     line-height: 60px;
     margin-left: 8px; }
-  /* line 24, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
+  /* line 23, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
   .profile__logout {
     text-decoration: none;
     height: 100%;
@@ -7496,3 +7495,20 @@ button.close {
   /* line 26, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
   .filters__search {
     margin-top: 15px; }
+
+/* line 2, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+.navbar-brand {
+  position: relative;
+  box-sizing: border-box;
+  height: 62px;
+  padding: .5em 0 .5em 15px; }
+  /* line 7, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+  .navbar-brand:after {
+    content: "YUM";
+    font-size: 34px;
+    position: absolute;
+    right: -58px;
+    top: 22px; }
+  /* line 14, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
+  .navbar-brand img {
+    max-height: 100%; }
