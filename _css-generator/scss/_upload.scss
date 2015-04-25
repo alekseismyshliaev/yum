@@ -1,5 +1,17 @@
 .upload{
 	.dropzone{
-		min-height: 227px;
+		border: 3px dashed lightgray;
+		min-height: 100px;
+		transition: min-height 0.3s ease-in-out 0s;
+
+		&.dz-drag-hover{
+			min-height: 227px;
+		}
+
+		 .dz-message{
+		 	soan{
+		 		display: block;
+		 	}
+		 }
 	}
 }

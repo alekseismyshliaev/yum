@@ -7716,7 +7716,15 @@ button.close {
 
 /* line 2, /Users/karlis/Desktop/yum/_css-generator/scss/_upload.scss */
 .upload .dropzone {
-  min-height: 227px; }
+  border: 3px dashed lightgray;
+  min-height: 100px;
+  transition: min-height 0.3s ease-in-out 0s; }
+  /* line 7, /Users/karlis/Desktop/yum/_css-generator/scss/_upload.scss */
+  .upload .dropzone.dz-drag-hover {
+    min-height: 227px; }
+  /* line 12, /Users/karlis/Desktop/yum/_css-generator/scss/_upload.scss */
+  .upload .dropzone .dz-message soan {
+    display: block; }
 
 /* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_profile.scss */
 .profile {
