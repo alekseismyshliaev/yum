@@ -224,6 +224,10 @@ UploadVideo.prototype.pollForVideoStatus = function() {
   });
 };
 
+function processAddedFile(file) {
+    console.log(file);
+}
+
 $( window ).resize(function() {
     $('.filters__bar').affix({
         offset: {
@@ -231,6 +235,23 @@ $( window ).resize(function() {
         }
     }); 
 });
+
+$(function() {
+    Dropzone.autoDiscover = false;
+    $("#file-dropzone").dropzone({
+        url: "/stub",
+        autoProcessQueue: false,
+        maxFilesize: 100,
+        paramName: "uploadfile",
+        uploadMultiple: true,
+        maxThumbnailFilesize: 5,
+        init: function() {
+            this.on("addedfile", function(file) {
+                processAddedFile(file);
+            });
+        },
+    });
+})
 
 
 
