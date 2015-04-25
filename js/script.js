@@ -52,7 +52,7 @@ function handleValidationResponse(data) {
     if(data["error"]) {
         // TODO have errors
     }
-    $.cookie("userid", data["user_id"], {expires: data["expires"]});
+    $.cookie("user_id", data["user_id"], {expires: data["expires"]});
 }
 
 
