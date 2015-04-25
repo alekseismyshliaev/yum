@@ -17,7 +17,8 @@ function checkAuth() {
     gapi.auth.authorize({
         client_id: CLIENT_ID,
         scope: SCOPE,
-        immediate: true
+        immediate: true,
+        redirect_uri: REDIRECT_URI,
     }, handleAuthResult);
 }
 
@@ -25,14 +26,14 @@ function requestAuth() {
     gapi.auth.authorize({
         client_id: CLIENT_ID,
         scope: SCOPE,
-        immediate: false
+        immediate: false,
+        redirect_uri: REDIRECT_URI,
     }, handleAuthResult);
 }
 
 function handleAuthResult(authResult) {
     if(authResult && !authResult.error) {
-        setUserInfo();
-        requestUploadListId();
+        alert("success");
     } else {
         $("a.hero__sign-in").click(requestAuth);
     }
