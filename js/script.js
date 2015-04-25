@@ -3,6 +3,7 @@ var CLIENT_ID = "872533094067-3mae4rlvuahk2pb146ju3ncgrtbh4c2s.apps.googleuserco
 var REDIRECT_URI = "http://smishlayev.github.io/yum/index.html";
 var SCOPE = [
     "https://www.googleapis.com/auth/youtube.upload",
+    "https://www.googleapis.com/auth/userinfo.profile",
 ];
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
