@@ -229,11 +229,13 @@ function processAddedFile(file) {
 }
 
 $( window ).resize(function() {
-    $('.filters__bar').affix({
-        offset: {
-            top: $('.filters').offset().top
-        }
-    }); 
+    if( $('.filters__bar')){
+        $('.filters__bar').affix({
+            offset: {
+                top: $('.filters').offset().top
+            }
+        });
+    }
 });
 
 $(function() {
@@ -252,6 +254,3 @@ $(function() {
         },
     });
 })
-
-
-
