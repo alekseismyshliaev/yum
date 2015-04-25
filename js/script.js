@@ -30,7 +30,6 @@ function requestAuth() {
 
 function handleAuthResult(authResult) {
     if(authResult && !authResult.error) {
-        $.cookie("user_id", authResult.user_id, {expires: authResult.expires});
         setUserInfo();
         requestUploadListId();
     } else {
@@ -135,6 +134,7 @@ UploadVideo.prototype.uploadFile = function(file) {
       privacyStatus: "unlisted",
     }
   };
+  this.file = file;
   var uploader = new MediaUploader({
     baseUrl: "https://www.googleapis.com/upload/youtube/v3/videos",
     file: file,
@@ -188,44 +188,44 @@ UploadVideo.prototype.uploadFile = function(file) {
   uploader.upload();
 };
 
-var STATUS_POLLING_INTERVAL_MILLIS = 60 * 1000;
+var STATUS_POLLING_INTERVAL_MILLIS = 1 * 1000;
 UploadVideo.prototype.pollForVideoStatus = function() {
-  gapi.client.request({
-    path: "/youtube/v3/videos",
-    params: {
-      part: "status,player",
-      id: this.videoId
-    },
-    callback: function(response) {
-      if (response.error) {
-        // The status polling failed.
-        console.log(response.error.message);
-        setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
-      } else {
-        var uploadStatus = response.items[0].status.uploadStatus;
-        switch (uploadStatus) {
-          // This is a non-final status, so we need to poll again.
-          case "uploaded":
-            alert("uploaded");//$('#post-upload-status').append('<li>Upload status: ' + uploadStatus + '</li>');
-            setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
-            break;
-          // The video was successfully transcoded and is available.
-          case "processed":
-            alert("processed");//$('#player').append(response.items[0].player.embedHtml);
-            //$('#post-upload-status').append('<li>Final status.</li>');
-            break;
-          // All other statuses indicate a permanent transcoding failure.
-          default:
-            alert("transcoding failed");//$('#post-upload-status').append('<li>Transcoding failed.</li>');
-            break;
-        }
-      }
-    }.bind(this)
-  });
+    gapi.client.request({
+        path: "/youtube/v3/videos",
+        params: {
+            part: "status,player",
+            id: this.videoId
+        },
+        callback: function(response) {
+            if (response.error) {
+                // The status polling failed.
+                console.log(response.error.message);
+                setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
+            } else {
+                var uploadStatus = response.items[0].status.uploadStatus;
+                switch (uploadStatus) {
+                    // This is a non-final status, so we need to poll again.
+                    case "uploaded":
+                        this.file.previewElement.classList.add("dz-success");
+                        setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
+                        break;
+                    // The video was successfully transcoded and is available.
+                    case "processed":
+                        alert("processed " + this.file.name);
+                        break;
+                    // All other statuses indicate a permanent transcoding failure.
+                    default:
+                        this.file.previewElement.classList.add("dz-error");
+                        break;
+                }
+            }
+        }.bind(this)
+    });
 };
 
 function processAddedFile(file) {
-    console.log(file);
+    var up = new UploadVideo();
+    up.uploadFile(file);
 }
 
 $( window ).resize(function() {
