@@ -31,8 +31,10 @@ function handleAuthResult(authResult) {
     if(authResult && !authResult.error) {
         $.cookie("user_id", authResult.user_id, {expires: authResult.expires});
         setUserInfo();
+        requestUploadListId();
     } else {
-        window.setTimeout(requestAuth, 1000);
+        // $("button").click(requestAuth);
+        $("div.video").html("Please log in first");
     }
 }
 
@@ -51,6 +53,39 @@ function setUserInfo() {
     });
 }
 
+function requestUploadListId() {
+    gapi.client.load("youtube", "v3", function() {
+        request = gapi.client.youtube.channels.list({
+            mine: true,
+            part: "contentDetails",
+        });
+        request.execute(function(response) {
+            playlistId = response.result.items[0].contentDetails.relatedPlaylists.uploads;
+            requestPlaylistVideos(playlistId);
+        });
+    });
+}
+
+function requestPlaylistVideos(playlistId) {
+    var request = gapi.client.youtube.playlistItems.list({
+        playlistId: playlistId,
+        part: "snippet",
+        maxResult: 10,
+    });
+    request.execute(function(response) {
+        if(response.result.items) {
+            $.each(response.result.items, function(index, item) {
+                addVideo(item);
+            });
+        } else {
+            $("div.video").html("Sorry, no videos are there for you");
+        }
+    });
+}
+
+function addVideo(item) {
+    console.log(item);
+}
 
 $(document).ready(function() {
 });
