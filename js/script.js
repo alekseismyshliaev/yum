@@ -7,55 +7,81 @@ var SCOPE = [
 ];
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
-function constructAuthURI() {
-    var parameters = {
+function handleClientLoad() {
+    checkAuth();
+}
+
+function checkAuth() {
+    gapi.auth.authorize({
         client_id: CLIENT_ID,
-        redirect_uri: REDIRECT_URI,
-        scope: SCOPE.join(" "),
-        response_type: "token"
-    };
-    return SERVER_ADDRESS + "?" + $.param(parameters);
+        scope: SCOPE,
+        immediate: true
+    }, handleAuthResult);
 }
 
-function makeAuthRequest() {
-    window.location.replace(constructAuthURI());
+function requestAuth() {
+    gapi.auth.authorize({
+        client_id: CLIENT_ID,
+        scope: SCOPE,
+        immediate: false
+    }, handleAuthResult);
 }
 
-function deparam(s) {
-    data = s.split("&");
-    var dict = {};
-    $.each(data, function(index, elem) {
-        var key = "";
-        var value = "";
-        [key, value] = elem.split("=");
-        dict[key] = value;
+function handleAuthResult(authResult) {
+    if(authResult && !authResult.error) {
+        $.cookie("user_id", authResult.user_id, {expires: authResult.expires});
+        setUserInfo();
+        requestUploadListId();
+    } else {
+        // $("button").click(requestAuth);
+        $("div.video").html("Please log in first");
+    }
+}
+
+function setUserInfo() {
+    gapi.client.load("plus", "v1", function() {
+        var request = gapi.client.plus.people.get({"userId": "me"});
+        request.execute(function(response) {
+
+            $("div.profile div.profile__name").text(response.displayName);
+            $("div.profile div.profile__image img").attr("src", response.image.url);
+        });
     });
-    return dict;
 }
 
-function handleAuthResponse(data) {
-    makeValidationRequest(data);
+function requestUploadListId() {
+    gapi.client.load("youtube", "v3", function() {
+        request = gapi.client.youtube.channels.list({
+            mine: true,
+            part: "contentDetails",
+        });
+        request.execute(function(response) {
+            playlistId = response.result.items[0].contentDetails.relatedPlaylists.uploads;
+            requestPlaylistVideos(playlistId);
+        });
+    });
 }
 
-function makeValidationRequest(token) {
-    $.getJSON(VALIDATION_SERVER + "?" + $.param({access_token: token}),
-        handleValidationResponse);
+function requestPlaylistVideos(playlistId) {
+    var request = gapi.client.youtube.playlistItems.list({
+        playlistId: playlistId,
+        part: "snippet",
+        maxResult: 10,
+    });
+    request.execute(function(response) {
+        if(response.result.items) {
+            $.each(response.result.items, function(index, item) {
+                addVideo(item);
+            });
+        } else {
+            $("div.video").html("Sorry, no videos are there for you");
+        }
+    });
 }
 
-function handleValidationResponse(data) {
-    if(data["audience"] != CLIENT_ID) {
-        //TODO something went wrong
-    }
-    if(data["scope"] != SCOPE.join(" ")) {
-        //TODO something went wrong
-    }
-    if(data["error"]) {
-        // TODO have errors
-    }
-    $.cookie("user_id", data["user_id"], {expires: data["expires"]});
+function addVideo(item) {
+    console.log(item);
 }
-
-
 
 // $(document).ready(function() {
 //     var data = deparam(window.location.hash.substring(1));
@@ -69,11 +95,14 @@ function handleValidationResponse(data) {
 // });
 // 
 
-$('.filters__bar').affix({
-      offset: {
-        top: $('.filters').offset().top
-      }
-}); 
+$( window ).resize(function() {
+    $('.filters__bar').affix({
+        offset: {
+            top: $('.filters').offset().top
+        }
+    }); 
+});
+
 $(document).ready(function(){
     console.log( $('.navbar').outerHeight(true) ,$ ('.upload-container').outerHeight(true))
     
