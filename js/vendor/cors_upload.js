@@ -14,8 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-var DRIVE_UPLOAD_URL = 'https://www.googleapis.com/upload/drive/v2/files/';
-
 
 /**
  * Helper for implementing retries with backoff. Initial retry
@@ -271,7 +269,7 @@ MediaUploader.prototype.buildQuery_ = function(params) {
  * @return {string} URL
  */
 MediaUploader.prototype.buildUrl_ = function(id, params, baseUrl) {
-  var url = baseUrl || DRIVE_UPLOAD_URL;
+  var url = baseUrl;
   if (id) {
     url += id;
   }
