@@ -7,66 +7,52 @@ var SCOPE = [
 ];
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
-function constructAuthURI() {
-    var parameters = {
+function handleClientLoad() {
+    checkAuth();
+}
+
+function checkAuth() {
+    gapi.auth.authorize({
         client_id: CLIENT_ID,
-        redirect_uri: REDIRECT_URI,
-        scope: SCOPE.join(" "),
-        response_type: "token"
-    };
-    return SERVER_ADDRESS + "?" + $.param(parameters);
+        scope: SCOPE,
+        immediate: true
+    }, handleAuthResult);
 }
 
-function makeAuthRequest() {
-    window.location.replace(constructAuthURI());
+function requestAuth() {
+    gapi.auth.authorize({
+        client_id: CLIENT_ID,
+        scope: SCOPE,
+        immediate: false
+    }, handleAuthResult);
 }
 
-function deparam(s) {
-    data = s.split("&");
-    var dict = {};
-    $.each(data, function(index, elem) {
-        var key = "";
-        var value = "";
-        [key, value] = elem.split("=");
-        dict[key] = value;
+function handleAuthResult(authResult) {
+    if(authResult && !authResult.error) {
+        $.cookie("user_id", authResult.user_id, {expires: authResult.expires});
+        setUserInfo();
+    } else {
+        window.setTimeout(requestAuth, 1000);
+    }
+}
+
+function setUserInfo() {
+    gapi.client.load("plus", "v1", function() {
+        var request = gapi.client.plus.people.get({"userId": "me"});
+        request.execute(function(response) {
+            var header = $("header");
+            header.append($("p").text(response.displayName));
+            var img = $("<img/>", {
+                src: response.image.url,
+                width: "50px",
+            });
+            header.append(img);
+        });
     });
-    return dict;
 }
-
-function handleAuthResponse(data) {
-    makeValidationRequest(data);
-}
-
-function makeValidationRequest(token) {
-    $.getJSON(VALIDATION_SERVER + "?" + $.param({access_token: token}),
-        handleValidationResponse);
-}
-
-function handleValidationResponse(data) {
-    if(data["audience"] != CLIENT_ID) {
-        //TODO something went wrong
-    }
-    if(data["scope"] != SCOPE.join(" ")) {
-        //TODO something went wrong
-    }
-    if(data["error"]) {
-        // TODO have errors
-    }
-    $.cookie("user_id", data["user_id"], {expires: data["expires"]});
-    window.location.hash = "";
-}
-
 
 
 $(document).ready(function() {
-    var data = deparam(window.location.hash.substring(1));
-    if(typeof $.cookie("user_id") != "undefined") {
-        alert("logged in " + $.cookie("user_id"));
-    } else if("access_token" in data) {
-        makeValidationRequest(data["access_token"]);
-    } else {
-        makeAuthRequest();
-    }
 });
 
 
