@@ -51,14 +51,14 @@ function handleValidationResponse(data) {
     if(data["error"]) {
         // TODO have errors
     }
-    alert("success");
+    $.cookie("userid", data["user_id"], {expires: data["expires"]});
 }
 
 
 
 $(document).ready(function() {
     var data = deparam(window.location.hash.substring(1));
-    if("access_token" in data) { //TODO set cookie and check it
+    if($.cookie("user_id")) {
         makeValidationRequest(data["access_token"]);
     } else {
         makeAuthRequest();
