@@ -1,6 +1,6 @@
 var SERVER_ADDRESS = "https://accounts.google.com/o/oauth2/auth";
 var CLIENT_ID = "872533094067-3mae4rlvuahk2pb146ju3ncgrtbh4c2s.apps.googleusercontent.com";
-var REDIRECT_URI = "http://smishlayev.github.io/yum/index.html";
+var REDIRECT_URI = "http://smishlayev.github.io/yum/manager.html";
 var SCOPE = [
     "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.upload",
@@ -104,7 +104,7 @@ function addVideo(item) {
         class: "video_link",
         title: item.snippet.title}).appendTo(li);
     var img = $("<img>", {
-        src: item.snippet.thumbnails.medium.url || "http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg",
+        src: item.snippet.thumbnails.medium.url,
         alt: item.snippet.title,
         class: "img-responsive"}).appendTo(a);
     var h2 = $("<h2>").text(item.snippet.title).appendTo(a);
