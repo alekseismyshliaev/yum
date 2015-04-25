@@ -67,7 +67,6 @@ function requestPlaylistVideos(playlistId) {
     var request = gapi.client.youtube.playlistItems.list({
         playlistId: playlistId,
         part: "contentDetails,snippet",
-        //fields: "entry/sippet/title",//(title,thumbnails.medium),contentDetails/duration",
         maxResult: 10,
     });
     request.execute(function(response) {
@@ -105,7 +104,7 @@ function addVideo(item) {
         class: "video_link",
         title: item.snippet.title}).appendTo(li);
     var img = $("<img>", {
-        src: "http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg",
+        src: item.snippet.thumbnails.medium.url || "http://i.ytimg.com/vi/ZKOtE9DOwGE/mqdefault.jpg",
         alt: item.snippet.title,
         class: "img-responsive"}).appendTo(a);
     var h2 = $("<h2>").text(item.snippet.title).appendTo(a);
