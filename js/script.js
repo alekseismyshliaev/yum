@@ -121,9 +121,13 @@ $( window ).resize(function() {
         offset: {
             top: $('.filters').offset().top
         }
-    }); 
+    });dy
+
+    $('.landing-page .body').css({'height':($(window).height())+'px'});
 });
 
-
+$(document).ready(function(){
+    $('.landing-page .body').css({'height':($(window).height())+'px'});
+})
 
 
