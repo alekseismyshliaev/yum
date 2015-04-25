@@ -25,6 +25,8 @@ function handleAuthResult(authResult) {
     if(authResult && !authResult.error) {
         setUserInfo();
         requestUploadListId();
+    } else if(authResult.error == "user_signed_out") {
+        alert("signed out!");
     } else {
         window.location.replace(LOGIN_URI);
         // $("div.video").html("Please log in first");
