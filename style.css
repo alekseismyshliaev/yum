@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 /* 
 	Project: YUM
 	CSS Author: karlis.upitis
@@ -7573,43 +7574,112 @@ html {
 
 /* line 4, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
 .landing-page {
+  position: relative;
   width: 100%;
-  height: 100%; }
-  /* line 8, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Open Sans', sans-serif; }
+  /* line 12, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
   .landing-page .main {
+    height: 100%;
     position: relative;
-    background-image: url('http://placehold.it/1024x800');
+    background-image: url('images/scroll.gif');
     background-size: cover;
     background-position: center; }
-    /* line 14, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+    /* line 20, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
     .landing-page .main__bg {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: #fff;
-      opacity: .3; }
+      background-color: black;
+      opacity: .8; }
+  /* line 43, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+  .landing-page .social {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 14.7019570017%;
+    margin-left: 85.2980429983%; }
+    /* line 89, node_modules/node-neat/node_modules/bourbon-neat/app/assets/stylesheets/grid/_span-columns.scss */
+    .landing-page .social:last-child {
+      margin-right: 0; }
+  /* line 52, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+  .landing-page .hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: block;
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-radius: 35px;
+    text-align: center; }
     @media screen and (min-width: 17.5em)  {
-      .landing-page .main__container {
-        max-width: 80%;
-        margin-left: auto;
-        margin-right: auto; }
-        /* line 20, /Users/karlis/Desktop/yum/_css-generator/node_modules/node-bourbon/node_modules/bourbon/app/assets/stylesheets/addons/_clearfix.scss */
-        .landing-page .main__container::after {
-          clear: both;
-          content: "";
-          display: table; } }
-    @media screen and (min-width: 45.8125em)  {
-      .landing-page .main__container {
-        max-width: 700px; } }
-  /* line 44, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
-  .landing-page .hero__logo {
-    margin: 0 auto;
+      .landing-page .hero {
+        width: 95%;
+        padding: 1em; }
+        /* line 66, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+        .landing-page .hero .hero__sign-in {
+          width: 240px; }
+          /* line 68, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+          .landing-page .hero .hero__sign-in:hover {
+            width: 280px; } }
+    @media screen and (min-width: 40.0625em)  {
+      .landing-page .hero {
+        width: 550px;
+        padding: 2em; }
+        /* line 76, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+        .landing-page .hero .hero__sign-in {
+          width: 265px; }
+          /* line 78, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+          .landing-page .hero .hero__sign-in:hover {
+            width: 280px; } }
+    /* line 85, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+    .landing-page .hero__logo {
+      margin: 0 auto;
+      width: 100px; }
+      /* line 88, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+      .landing-page .hero__logo img {
+        max-width: 100%; }
+    /* line 92, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+    .landing-page .hero__description {
+      color: white;
+      font-size: 23px;
+      margin-top: 24px;
+      opacity: 0.7; }
+    /* line 98, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+    .landing-page .hero__sign-in {
+      display: block;
+      margin: 2em auto 0;
+      transition: width .3s ease-in-out; }
+      /* line 102, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+      .landing-page .hero__sign-in img {
+        max-width: 100%; }
+  /* line 109, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+  .landing-page .support {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    height: 100px;
     width: 100px; }
-    /* line 47, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
-    .landing-page .hero__logo img {
-      max-width: 100%; }
-  /* line 62, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
-  .landing-page .support__garage img {
-    max-width: 100%; }
+    @media screen and (min-width: 17.5em)  {
+      .landing-page .support {
+        display: none; } }
+    @media screen and (min-width: 40.0625em)  {
+      .landing-page .support {
+        display: block; } }
+    /* line 123, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+    .landing-page .support__garage {
+      width: 100%;
+      height: 100%;
+      opacity: .4;
+      transition: opacity .3s ease-in-out; }
+      /* line 129, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+      .landing-page .support__garage img {
+        max-height: 100%; }
+      /* line 132, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
+      .landing-page .support__garage:hover {
+        opacity: .7; }

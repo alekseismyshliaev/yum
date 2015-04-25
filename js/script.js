@@ -117,17 +117,20 @@ function addVideo(item) {
 
 
 $( window ).resize(function() {
-    $('.filters__bar').affix({
-        offset: {
-            top: $('.filters').offset().top
-        }
-    });dy
+    if( $('.filters__bar')){
+        $('.filters__bar').affix({
+            offset: {
+                top: $('.filters').offset().top
+            }
+        });
+    }
 
-    $('.landing-page .body').css({'height':($(window).height())+'px'});
+    // $('.landing-page .body').css({'height':($(window).height())+'px'});
 });
 
-$(document).ready(function(){
-    $('.landing-page .body').css({'height':($(window).height())+'px'});
-})
+// $(document).ready(function(){
+//     console.log($(window).height()+'px');
+//     $('.landing-page .body').css({'height':($(window).height())+'px'});
+// })
 
 
