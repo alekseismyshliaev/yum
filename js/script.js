@@ -12,7 +12,7 @@ var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 function handleClientLoad() {
     gapi.auth.signIn({
         callback: handleAuthResult});
-    checkAuth();
+    //checkAuth();
 }
 
 function checkAuth() {
