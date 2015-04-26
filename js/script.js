@@ -219,6 +219,7 @@ UploadVideo.prototype.pollForVideoStatus = function() {
 function processAddedFile(file) {
     var up = new UploadVideo();
     file.previewElement.classList.add("dz-processing");
+    $(file.previewElement).find("svg").remove();
     up.uploadFile(file);
 }
 
