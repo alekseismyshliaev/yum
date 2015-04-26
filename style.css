@@ -7524,15 +7524,16 @@ button.close {
     border-radius: 4px;
     box-shadow: 0 11px 10px -10px rgba(0, 0, 0, 0.15);
     background-color: #f8f8f8;
-    border-color: #e7e7e7; }
-    /* line 18, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+    border-color: #e7e7e7;
+    z-index: 10; }
+    /* line 19, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
     .filters__bar.affix {
       top: 0;
       width: 100%; }
-  /* line 23, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+  /* line 24, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
   .filters .container {
     height: 100%; }
-  /* line 27, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+  /* line 28, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
   .filters__search {
     margin-top: 15px; }
 
