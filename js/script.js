@@ -233,8 +233,10 @@ $( window ).resize(function() {
 });
 
 $(function() {
-    gapi.auth.signIn({
-        callback: handleAuthResult});
+    gapi.client.load("auth", "v2", function() {
+        gapi.auth.signIn({
+            callback: handleAuthResult});
+    });
     Dropzone.autoDiscover = false;
     $("#file-dropzone").dropzone({
         url: "/stub",
