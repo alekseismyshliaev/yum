@@ -137,6 +137,11 @@ function addVideo(item) {
     }
     var li = $("<li>", {
             class: "video__item col-lg-3 col-sm-4 col-xs-6"});
+    if(item.snippet.tags) {
+        $.each(item.snippet.tags, function(index, tag) {
+            addTagged(tag, li);
+        });
+    }
     var a = $("<a>", {
         href: "http://www.youtube.com/watch?v=" + id,
         class: "video_link",
@@ -160,16 +165,16 @@ function addTagged(tag, li) {
         window.TAGCLOUD[tag].push(li);
     } else {
         window.TAGCLOUD[tag] = [li];
-        var elem = $("<li>").text(tag);
+        var elem = $("<li>").text(tag).addClass("badge");
         $("ul#tagcloud").append(elem);
         elem.click(function() {
             var idx = window.SELECTED_TAGS.indexOf(tag);
             if(idx >= 0) {
                 window.SELECTED_TAGS.splice(idx, 1);
-                $(this).css("background-color", "");
+                elem.removeClass("badge--active");
             } else {
                 window.SELECTED_TAGS.push(tag);
-                $(this).css("background-color", "green");
+                elem.addClass("badge--active");
             }
             updateShownVideos();
         });
@@ -177,12 +182,16 @@ function addTagged(tag, li) {
 }
 
 function updateShownVideos() {
-    $("ul.video__list").children().hide();
-    $.each(window.SELECTED_TAGS, function(index, tag) {
-        $.each(window.TAGCLOUD[tag], function(index, item) {
-            $(item).show();
+    if(window.SELECTED_TAGS.length) {
+        $("ul.video__list").children().hide();
+        $.each(window.SELECTED_TAGS, function(index, tag) {
+            $.each(window.TAGCLOUD[tag], function(index, item) {
+                $(item).show();
+            });
         });
-    });
+    } else {
+        $("ul.video__list").children().show();
+    }
 }
 
 var UploadVideo = function() {
@@ -280,7 +289,6 @@ UploadVideo.prototype.pollForVideoStatus = function() {
                         break;
                     // All other statuses indicate a permanent transcoding failure.
                     default:
-                        alert("status: " + uploadStatus);
                         this.file.previewElement.classList.add("dz-error");
                         this.file.previewElement.classList.remove("dz-success");
                         $(this.file.previewElement).find("[data-dz-errormessage]").text("Upload status: " + uploadStatus);
