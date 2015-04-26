@@ -13,7 +13,6 @@ function handleClientLoad() {
     var params = {
         callback: handleAuthResult,
         client_id: CLIENT_ID,
-        scope: SCOPE,
         cookiepolicy: "single_host_origin",
     };
     var signinButton = $("a.hero__sign-in");
