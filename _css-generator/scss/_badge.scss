@@ -1,10 +1,12 @@
 .badge{
 	font-size: 14px;
-	border: 2px solid rgba(#888,.8);
+	border: 2px solid rgba(#999,.8);
 	padding: .3em .5em;
 	border-radius: 4px;
 	background-color: transparent;
+	color: #111;
 	&.badge--active{
-		border-color: rgba(#333,.8);
+		border-color: rgba(#222,.8);
+		color: #222;
 	}
 }
