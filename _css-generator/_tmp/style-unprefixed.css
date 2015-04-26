@@ -7787,6 +7787,9 @@ button.close {
   /* line 28, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
   .filters__search {
     margin-top: 15px; }
+  /* line 31, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+  .filters__tags {
+    overflow-x: auto; }
 
 /* line 2, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
 .navbar-header {
@@ -7819,6 +7822,16 @@ button.close {
       /* line 30, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
       .navbar-brand:after {
         display: block; } }
+
+/* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_badge.scss */
+.badge {
+  font-size: 14px;
+  border: 1px solid rgba(136, 136, 136, 0.8);
+  padding: .3em .5em;
+  border-radius: 4px; }
+  /* line 6, /Users/karlis/Desktop/yum/_css-generator/scss/_badge.scss */
+  .badge.badge--active {
+    border-color: rgba(51, 51, 51, 0.8); }
 
 /* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
 html {
