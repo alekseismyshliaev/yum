@@ -8,6 +8,8 @@ var SCOPE = [
     "https://www.googleapis.com/auth/userinfo.profile",
 ];
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
+var TAGCLOUD = {};
+var SELECTED_TAGS = [];
 
 function handleClientLoad() {
     gapi.auth.signIn({
@@ -67,8 +69,17 @@ function requestPlaylistVideos(playlistId) {
     });
     request.execute(function(response) {
         if(response.result.items) {
+            ids = [];
             $.each(response.result.items, function(index, item) {
-                addVideo(item);
+                ids = ids.concat([item.snippet.resourceId.videoId]);
+            });
+            var request = gapi.client.youtube.videos.list({
+                part: "snippet",
+                id: ids.join(",")});
+            request.execute(function(resp) {
+                $.each(resp.items, function(index, vid) {
+                    addVideo(vid);
+                });
             });
         } else {
             $("div.video").html("Sorry, no videos are there for you");
@@ -142,6 +153,36 @@ function addVideo(item) {
     var duration = $("<span>", {
         class: "duration"}).text(duration).appendTo(a);
     $("ul.video__list").append(li);
+}
+
+function addTagged(tag, li) {
+    if(tag in window.TAGCLOUD) {
+        window.TAGCLOUD[tag].push(li);
+    } else {
+        window.TAGCLOUD[tag] = [li];
+        var elem = $("<li>").text(tag);
+        $("ul#tagcloud").append(elem);
+        elem.click(function() {
+            var idx = window.SELECTED_TAGS.indexOf(tag);
+            if(idx >= 0) {
+                window.SELECTED_TAGS.splice(idx, 1);
+                $(this).css("background-color", "");
+            } else {
+                window.SELECTED_TAGS.push(tag);
+                $(this).css("background-color", "green");
+            }
+            updateShownVideos();
+        });
+    }
+}
+
+function updateShownVideos() {
+    $("ul.video__list").children().hide();
+    $.each(window.SELECTED_TAGS, function(index, tag) {
+        $.each(window.TAGCLOUD[tag], function(index, item) {
+            $(item).show();
+        });
+    });
 }
 
 var UploadVideo = function() {
