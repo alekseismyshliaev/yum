@@ -135,7 +135,7 @@ function addVideo(item) {
         src: item.snippet.thumbnails.medium.url,
         alt: item.snippet.title,
         style: "margin:0 auto",
-        height: "156px",
+        // height: "156px",
         class: "img-responsive"}).appendTo(a);
     var h2 = $("<h2>").text(item.snippet.title).appendTo(a);
     var play = $("<span>", {
