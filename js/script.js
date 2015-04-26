@@ -268,7 +268,7 @@ $( window ).resize(function() {
 });
 
 $(function() {
-    //$("button.search").click(handleSearchButton);
+    $("button.search").click(handleSearchButton);
     Dropzone.autoDiscover = false;
     $("#file-dropzone").dropzone({
         url: "/stub",
