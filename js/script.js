@@ -40,7 +40,6 @@ function setUserInfo() {
         request.execute(function(response) {
 
             $(".search").removeAttr("disabled");
-            $("button.search").click(handleSearchButton);
             $("div.profile div.profile__name").text(response.displayName);
             $("div.profile div.profile__image img").attr("src", response.image.url);
         });
@@ -269,7 +268,7 @@ $( window ).resize(function() {
 });
 
 $(function() {
-    $("button#search").attr("disable", true);
+    $("button.search").click(handleSearchButton);
     Dropzone.autoDiscover = false;
     $("#file-dropzone").dropzone({
         url: "/stub",
