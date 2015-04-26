@@ -10,6 +10,8 @@ var SCOPE = [
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
 function handleClientLoad() {
+    gapi.auth.signIn({
+        callback: handleAuthResult});
     checkAuth();
 }
 
@@ -158,16 +160,8 @@ UploadVideo.prototype.uploadFile = function(file) {
       var estimatedSecondsRemaining = (totalBytes - bytesUploaded) / bytesPerSecond;
       var percentageComplete = (bytesUploaded * 100) / totalBytes;
 
-      //$('#upload-progress').attr({
-      //  value: bytesUploaded,
-      //  max: totalBytes
-      //});
-
-      //$('#percent-transferred').text(percentageComplete);
-      //$('#bytes-transferred').text(bytesUploaded);
-      //$('#total-bytes').text(totalBytes);
-
-      //$('.during-upload').show();
+        $(this.file.previewElement).find("[data-dz-uploadprogress]").css("width", percentageComplete + "%");
+        $(this.file.previewElement).find(".dz-progress").css("opacity", "1");
     }.bind(this),
     onComplete: function(data) {
       var uploadResponse = JSON.parse(data);
@@ -200,16 +194,21 @@ UploadVideo.prototype.pollForVideoStatus = function() {
                 switch (uploadStatus) {
                     // This is a non-final status, so we need to poll again.
                     case "uploaded":
+                        $(this.file.previewElement).find("[data-dz-uploadprogress]").css("width", "100%");
                         this.file.previewElement.classList.add("dz-success");
+                        this.file.previewElement.classList.remove("dz-error");
                         setTimeout(this.pollForVideoStatus.bind(this), STATUS_POLLING_INTERVAL_MILLIS);
                         break;
                     // The video was successfully transcoded and is available.
                     case "processed":
-                        alert("processed " + this.file.name);
+                        //alert("processed " + this.file.name);
                         break;
                     // All other statuses indicate a permanent transcoding failure.
                     default:
+                        alert("status: " + uploadStatus);
                         this.file.previewElement.classList.add("dz-error");
+                        this.file.previewElement.classList.remove("dz-success");
+                        $(this.file.previewElement).find("[data-dz-errormessage]").text("Upload status: " + uploadStatus);
                         break;
                 }
             }
@@ -219,6 +218,7 @@ UploadVideo.prototype.pollForVideoStatus = function() {
 
 function processAddedFile(file) {
     var up = new UploadVideo();
+    file.previewElement.classList.add("dz-processing");
     up.uploadFile(file);
 }
 
@@ -233,10 +233,6 @@ $( window ).resize(function() {
 });
 
 $(function() {
-    gapi.client.load("auth", "v2", function() {
-        gapi.auth.signIn({
-            callback: handleAuthResult});
-    });
     Dropzone.autoDiscover = false;
     $("#file-dropzone").dropzone({
         url: "/stub",
