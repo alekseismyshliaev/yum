@@ -6,7 +6,7 @@ var SCOPE = [
     "https://www.googleapis.com/auth/youtube",
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/userinfo.profile",
-];
+].join(" ");
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
 function handleClientLoad() {
