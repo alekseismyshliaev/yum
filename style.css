@@ -7589,11 +7589,12 @@ button.close {
   padding: .3em .5em;
   border-radius: 4px;
   background-color: transparent;
-  color: #111; }
+  color: rgba(153, 153, 153, 0.8);
+  cursor: pointer; }
   /* line 8, /Users/karlis/Desktop/yum/_css-generator/scss/_badge.scss */
   .badge.badge--active {
     border-color: rgba(34, 34, 34, 0.8);
-    color: #222; }
+    color: rgba(34, 34, 34, 0.8); }
 
 /* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_landing-page.scss */
 html {

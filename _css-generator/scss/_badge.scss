@@ -4,9 +4,10 @@
 	padding: .3em .5em;
 	border-radius: 4px;
 	background-color: transparent;
-	color: #111;
+	color: rgba(#999,.8);
 	&.badge--active{
 		border-color: rgba(#222,.8);
-		color: #222;
+		color: rgba(#222,.8);
 	}
+	cursor: pointer;
 }
