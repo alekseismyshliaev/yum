@@ -12,8 +12,6 @@ var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 function handleClientLoad() {
     var params = {
         callback: handleAuthResult,
-        client_id: CLIENT_ID,
-        cookiepolicy: "single_host_origin",
     };
     var signinButton = $("a.hero__sign-in");
     signinButton.click(function() {
