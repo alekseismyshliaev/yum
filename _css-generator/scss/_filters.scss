@@ -30,5 +30,15 @@
 	}
 	&__tags{
 		overflow-x: auto;
+		#tagcloud{
+			list-style-type: none;
+			li{
+				display: inline-block;
+				&+li{
+					margin-left: .3em;
+					margin-bottom: .2em;
+				}
+			}
+		}
 	}
 }

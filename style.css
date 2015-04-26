@@ -7539,6 +7539,16 @@ button.close {
   /* line 31, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
   .filters__tags {
     overflow-x: auto; }
+    /* line 33, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+    .filters__tags #tagcloud {
+      list-style-type: none; }
+      /* line 35, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+      .filters__tags #tagcloud li {
+        display: inline-block; }
+        /* line 37, /Users/karlis/Desktop/yum/_css-generator/scss/_filters.scss */
+        .filters__tags #tagcloud li + li {
+          margin-left: .3em;
+          margin-bottom: .2em; }
 
 /* line 2, /Users/karlis/Desktop/yum/_css-generator/scss/_navbar.scss */
 .navbar-header {
@@ -7575,10 +7585,11 @@ button.close {
 /* line 1, /Users/karlis/Desktop/yum/_css-generator/scss/_badge.scss */
 .badge {
   font-size: 14px;
-  border: 1px solid rgba(136, 136, 136, 0.8);
+  border: 2px solid rgba(136, 136, 136, 0.8);
   padding: .3em .5em;
-  border-radius: 4px; }
-  /* line 6, /Users/karlis/Desktop/yum/_css-generator/scss/_badge.scss */
+  border-radius: 4px;
+  background-color: transparent; }
+  /* line 7, /Users/karlis/Desktop/yum/_css-generator/scss/_badge.scss */
   .badge.badge--active {
     border-color: rgba(51, 51, 51, 0.8); }
 
