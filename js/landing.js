@@ -10,43 +10,24 @@ var SCOPE = [
 var VALIDATION_SERVER = "https://www.googleapis.com/oauth2/v1/tokeninfo";
 
 function handleClientLoad() {
-    checkAuth();
-}
-
-function checkAuth() {
-    gapi.auth.authorize({
+    var params = {
+        callback: handleAuthResult,
         client_id: CLIENT_ID,
         scope: SCOPE,
-        immediate: true,
-        redirect_uri: REDIRECT_URI,
-    }, handleAuthResult);
-}
-
-function requestAuth() {
-    gapi.auth.authorize({
-        client_id: CLIENT_ID,
-        scope: SCOPE,
-        immediate: false,
-        redirect_uri: REDIRECT_URI,
-    }, handleAuthResult);
+        cookiepolicy: "single_host_origin",
+    };
+    var signinButton = $("a.hero__sign-in");
+    signinButton.click(function() {
+        gapi.auth.signIn(params);
+    });
 }
 
 function handleAuthResult(authResult) {
-    if(authResult && !authResult.error) {
+    if(authResult["status"]["signed_in"]) {
         alert("success");
+        window.location.replace(REDIRECT_URI);
     } else {
-        $("a.hero__sign-in").click(requestAuth);
+        console.log("Sign-in state: " + authResult["error"]);
     }
-}
-
-function setUserInfo() {
-    gapi.client.load("plus", "v1", function() {
-        var request = gapi.client.plus.people.get({"userId": "me"});
-        request.execute(function(response) {
-
-            $("div.profile div.profile__name").text(response.displayName);
-            $("div.profile div.profile__image img").attr("src", response.image.url);
-        });
-    });
 }
 

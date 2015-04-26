@@ -29,7 +29,6 @@ function handleAuthResult(authResult) {
         alert("signed out!");
     } else {
         window.location.replace(LOGIN_URI);
-        // $("div.video").html("Please log in first");
     }
 }
 
