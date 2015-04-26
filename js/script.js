@@ -39,6 +39,8 @@ function setUserInfo() {
         var request = gapi.client.plus.people.get({"userId": "me"});
         request.execute(function(response) {
 
+            $(".search").removeAttr("disabled");
+            $("button.search").click(handleSearchButton);
             $("div.profile div.profile__name").text(response.displayName);
             $("div.profile div.profile__image img").attr("src", response.image.url);
         });
@@ -62,7 +64,7 @@ function requestPlaylistVideos(playlistId) {
     var request = gapi.client.youtube.playlistItems.list({
         playlistId: playlistId,
         part: "contentDetails,snippet",
-        maxResult: 10,
+        maxResults: 50,
     });
     request.execute(function(response) {
         if(response.result.items) {
@@ -75,10 +77,35 @@ function requestPlaylistVideos(playlistId) {
     });
 }
 
+function searchVideos(query) {
+    var request = gapi.client.youtube.search.list({
+        forMine: true,
+        q: query,
+        type: "video",
+        part: "snippet",
+        maxResults: 50,
+    });
+    $("ul.video__list").children().remove();
+    request.execute(function(response) {
+        if(response.result.items) {
+            $.each(response.result.items, function(index, item) {
+                addVideo(item);
+            });
+        } else {
+            $("div.video").html("Sorry, no videos are there for you");
+        }
+    });
+}
+
+function handleSearchButton() {
+    var text = $("input.search").val();
+    searchVideos(text);
+}
+
 function addVideo(item) {
     var reptms = /^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/;
     var duration = "";
-    if (reptms.test(item.contentDetails.duration)) {
+    if (item.contentDetails && reptms.test(item.contentDetails.duration)) {
         var matches = reptms.exec(input);
         if (matches[1])
             duration += matches[1] + ":";
@@ -92,10 +119,16 @@ function addVideo(item) {
             duration += "00";
     }
 
+    var id = "";
+    if(item.contentDetails && item.contentDetails.videoId) {
+        id = item.contentDetails.videoId;
+    } else if(item.id && item.id.videoId) {
+        id = item.id.videoId;
+    }
     var li = $("<li>", {
             class: "video__item col-lg-3 col-sm-4 col-xs-6"});
     var a = $("<a>", {
-        href: "http://www.youtube.com/watch?v=" + item.contentDetails.videoId,
+        href: "http://www.youtube.com/watch?v=" + id,
         class: "video_link",
         title: item.snippet.title}).appendTo(li);
     var img = $("<img>", {
@@ -236,6 +269,7 @@ $( window ).resize(function() {
 });
 
 $(function() {
+    $("button#search").attr("disable", true);
     Dropzone.autoDiscover = false;
     $("#file-dropzone").dropzone({
         url: "/stub",

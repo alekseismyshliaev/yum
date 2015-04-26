@@ -21,7 +21,6 @@ function handleClientLoad() {
 
 function handleAuthResult(authResult) {
     if(authResult["status"]["signed_in"]) {
-        alert("success");
         window.location.replace(REDIRECT_URI);
     } else {
         console.log("Sign-in state: " + authResult["error"]);
