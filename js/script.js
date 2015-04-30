@@ -109,6 +109,7 @@ function searchVideos(query) {
 
 function handleSearchButton() {
     var text = $("input.search").val();
+    window.TAGCLOUD = {};
     searchVideos(text);
 }
 
