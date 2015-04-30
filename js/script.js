@@ -96,6 +96,9 @@ function searchVideos(query) {
         maxResults: 50,
     });
     $("ul.video__list").children().remove();
+    window.TAGCLOUD = {};
+    window.SELECTED_TAGS = [];
+    $("ul#tagcloud").children().remove();
     request.execute(function(response) {
         if(response.result.items) {
             $.each(response.result.items, function(index, item) {
@@ -109,7 +112,6 @@ function searchVideos(query) {
 
 function handleSearchButton() {
     var text = $("input.search").val();
-    window.TAGCLOUD = {};
     searchVideos(text);
 }
 
