@@ -103,7 +103,7 @@ function searchVideos(query) {
         if(response.result.items) {
             ids = [];
             $.each(response.result.items, function(index, item) {
-                ids = ids.concat([item.snippet.resourceId.videoId]);
+                ids = ids.concat([item.id.videoId]);
             });
             var request = gapi.client.youtube.videos.list({
                 part: "snippet",
