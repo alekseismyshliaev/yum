@@ -101,8 +101,17 @@ function searchVideos(query) {
     $("ul#tagcloud").children().remove();
     request.execute(function(response) {
         if(response.result.items) {
+            ids = [];
             $.each(response.result.items, function(index, item) {
-                addVideo(item);
+                ids = ids.concat([item.snippet.resourceId.videoId]);
+            });
+            var request = gapi.client.youtube.videos.list({
+                part: "snippet",
+                id: ids.join(",")});
+            request.execute(function(resp) {
+                $.each(resp.items, function(index, vid) {
+                    addVideo(vid);
+                });
             });
         } else {
             $("div.video").html("Sorry, no videos are there for you");
